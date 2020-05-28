@@ -6,7 +6,7 @@ CREATE TYPE row_match IS OBJECT (
 /
 CREATE TYPE tblteam IS TABLE OF row_match;
 /
-CREATE OR REPLACE FUNCTION chooseproject ( teamName VARCHAR ) RETURN tblteam PIPELINED IS
+CREATE OR REPLACE FUNCTION selectmatch ( teamName VARCHAR ) RETURN tblteam PIPELINED IS
 CURSOR tbl IS
 	(SELECT team_name
 	FROM team
